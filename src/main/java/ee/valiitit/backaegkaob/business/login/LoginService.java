@@ -11,6 +11,7 @@ public class LoginService {
     @Resource
     private UserService userService;
 
+    @Resource
     private UserMapper userMapper;
 
     public LoginResponseDto login(String username, String password) {
