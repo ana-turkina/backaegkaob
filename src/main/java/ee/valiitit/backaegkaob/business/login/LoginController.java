@@ -10,7 +10,7 @@ public class LoginController {
     @Resource
     private LoginService loginService;
 
-    @GetMapping("/home")
+    @GetMapping("/login")
     public LoginResponseDto login(@RequestParam String username, @RequestParam String password) {
         return loginService.login(username, password);
     }
