@@ -10,7 +10,7 @@ public class UserService {
     @Resource
     private UserRepository userRepository;
 
-    public User findActiveUserBy(String username, String password) {
-        return userRepository.findUserBy(username, password, Status.ACTIVE);
+    public User findActiveUserBy(String email, String password) {
+        return userRepository.findUserBy(email, password, Status.ACTIVE);
     }
 }
