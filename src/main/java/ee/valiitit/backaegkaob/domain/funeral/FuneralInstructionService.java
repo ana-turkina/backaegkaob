@@ -9,11 +9,9 @@ import org.springframework.stereotype.Service;
 public class FuneralInstructionService {
     @Resource
     private UserRepository userRepository;
-    private final FuneralRepository funeralRepository;
+    @Resource
+    private FuneralRepository funeralRepository;
 
-    public FuneralInstructionService(FuneralRepository funeralRepository) {
-        this.funeralRepository = funeralRepository;
-    }
 
     public void saveFuneralInstructions(Funeral funeral) {
         funeralRepository.save(funeral);

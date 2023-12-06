@@ -19,7 +19,7 @@ public class FuneralInstructionsService {
 
     public void addFuneralInstructions(Integer userId, FuneralDto funeralDto) {
         Funeral funeral = createFuneral(userId, funeralDto);
-
+        funeralInstructionService.saveFuneralInstructions(funeral);
     }
 
     private Funeral createFuneral(Integer userId, FuneralDto funeralDto) {

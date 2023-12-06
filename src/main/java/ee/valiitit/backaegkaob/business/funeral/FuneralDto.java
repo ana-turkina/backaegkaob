@@ -12,6 +12,4 @@ import java.io.Serializable;
 public class FuneralDto implements Serializable {
     Integer id;
     String funeralInstructions;
-    @NotNull
-    Integer userId;
 }
