@@ -12,7 +12,7 @@ public class FuneralInstructionsController {
     private FuneralInstructionsService funeralInstructionsService;
 
     @PostMapping("/funeral/instructions")
-    public void addFuneralInstructions(@RequestParam Integer userId, @RequestBody FuneralDto funeralDto) {
+    public void addFuneralInstructions(@RequestParam Integer userId,  @RequestBody FuneralDto funeralDto) {
         funeralInstructionsService.addFuneralInstructions(userId, funeralDto);
     }
 }
