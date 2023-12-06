@@ -17,12 +17,12 @@ public class FuneralInstructionsService {
     @Resource
     private FuneralMapper funeralMapper;
 
-    public void addFuneralInstructions(Integer userId, FuneralDto funeralDto) {
-        Funeral funeral = createFuneral(userId, funeralDto);
+    public void addFuneralInstructions(FuneralDto funeralDto, Integer userId) {
+        Funeral funeral = createFuneral(funeralDto, userId);
         funeralInstructionService.saveFuneralInstructions(funeral);
     }
 
-    private Funeral createFuneral(Integer userId, FuneralDto funeralDto) {
+    private Funeral createFuneral(FuneralDto funeralDto, Integer userId) {
         User user = userService.getUserBy(userId);
         Funeral funeral = funeralMapper.toFuneral(funeralDto);
         funeral.setUser(user);
