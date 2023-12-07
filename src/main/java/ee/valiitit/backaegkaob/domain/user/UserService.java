@@ -13,4 +13,8 @@ public class UserService {
     public User findActiveUserBy(String email, String password) {
         return userRepository.findUserBy(email, password, Status.ACTIVE);
     }
+
+    public User getUserBy(Integer userId) {
+        return userRepository.findUserBy(userId);
+    }
 }
