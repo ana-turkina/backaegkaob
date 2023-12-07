@@ -1,10 +1,7 @@
 package ee.valiitit.backaegkaob.business.funeral;
 
 import jakarta.annotation.Resource;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class FuneralInstructionsController {
@@ -15,4 +12,5 @@ public class FuneralInstructionsController {
     public void addFuneralInstructions(@RequestBody FuneralDto funeralDto,  @RequestParam Integer userId) {
         funeralInstructionsService.addFuneralInstructions(funeralDto, userId);
     }
+
 }
