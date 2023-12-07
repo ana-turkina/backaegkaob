@@ -27,6 +27,7 @@ public class FuneralInstructionsService {
         Funeral funeral = funeralMapper.toFuneral(funeralDto);
         funeral.setUser(user);
         return funeral;
+
     }
 
 

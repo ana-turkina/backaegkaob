@@ -5,7 +5,7 @@ import ee.valiitit.backaegkaob.domain.image.Image;
 
 import java.nio.charset.StandardCharsets;
 
-public class ImageConverter {
+public class  ImageConverter {
 public static Image stringToImage(String imageData, Integer userId) {
 if (imageData == null) {
     return null;
