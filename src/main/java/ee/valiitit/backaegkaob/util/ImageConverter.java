@@ -1,9 +1,22 @@
 package ee.valiitit.backaegkaob.util;
 
 
+import ee.valiitit.backaegkaob.domain.image.Image;
+
 import java.nio.charset.StandardCharsets;
 
 public class ImageConverter {
+public static Image stringToImage(String imageData, Integer userId) {
+if (imageData == null) {
+    return null;
+}
+Image image = new Image();
+image.setFile(stringToByteArray(imageData));
+
+return image;
+}
+
+
 
 
     public static byte[] stringToByteArray(String imageData) {

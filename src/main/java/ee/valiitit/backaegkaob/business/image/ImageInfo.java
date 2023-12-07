@@ -1,21 +1,24 @@
 package ee.valiitit.backaegkaob.business.image;
 
 import ee.valiitit.backaegkaob.domain.image.Image;
-import ee.valiitit.backaegkaob.domain.image.UserInfo;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+import lombok.Value;
 
+import java.io.Serializable;
 import java.time.Instant;
 
 /**
- * Projection for {@link Image}
+ * DTO for {@link Image}
  */
-public interface ImageInfo {
-    Integer getId();
-
-    String getTitle();
-
-    byte[] getFile();
-
-    Instant getTimestamp();
-
-    UserInfo getUser();
+@Value
+public class ImageInfo implements Serializable {
+    Integer id;
+    @NotNull
+    @Size(max = 255)
+    String title;
+    @NotNull
+    String imageData;
+    @NotNull
+    Instant timestamp;
 }

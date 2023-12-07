@@ -1,5 +1,6 @@
-package ee.valiitit.backaegkaob.domain.user;
+package ee.valiitit.backaegkaob.business;
 
+import ee.valiitit.backaegkaob.domain.user.User;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Value;

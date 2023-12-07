@@ -13,6 +13,6 @@ public class GalleryController {
 
     @PostMapping("/gallery")
     public void addImageToDataBase(@RequestBody ImageInfo imageInfo, @RequestParam Integer userId) {
-        galleryService.addImageToDataBase(imageInfo, userId);
+        galleryService.handleAddedImage(imageInfo, userId);
     }
 }
