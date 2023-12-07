@@ -22,8 +22,8 @@ public class BucketlistsController {
     }
 
  @PostMapping("/before/bucketlist")
- public void addBucketlistItem (@RequestBody BucketlistDto bucketlistDto, @RequestParam Integer id, String title, String text, LocalDateTime timestamp) {
-        bucketlistsService.addBucketlistItem(bucketlistDto, userId);
+ public void addBucketlistItem (@RequestBody BucketlistDto bucketlistDto, @RequestParam Integer id,  Integer user_id, String title, String text, LocalDateTime timestamp) {
+        bucketlistsService.addBucketlistItem(bucketlistDto);
  }
 }
 
