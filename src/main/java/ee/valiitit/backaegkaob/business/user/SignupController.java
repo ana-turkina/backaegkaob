@@ -27,6 +27,7 @@ public class SignupController {
             @ApiResponse(responseCode = "403", description = "Sellise emailiga kasutaja on juba süsteemis olemas",
                     content = @Content(schema = @Schema(implementation = ApiError.class)))})
     public void addNewUser(@RequestBody @Valid UserRequest request) {
+
         signupService.addNewUser(request);
     }
     @PostMapping("/user/related")
@@ -36,7 +37,7 @@ public class SignupController {
             @ApiResponse(responseCode = "403", description = "Sellise emailiga kasutaja on juba süsteemis olemas",
                     content = @Content(schema = @Schema(implementation = ApiError.class)))})
     public void addNewRelatedUser(@RequestBody @Valid RelatedUserRequest request) {
-//        signupService.addNewRelatedUser(userRequest);
+        signupService.addNewRelatedUser(request);
     }
 
 
