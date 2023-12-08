@@ -1,5 +1,6 @@
-package ee.valiitit.backaegkaob.business.image;
+package ee.valiitit.backaegkaob.business.role;
 
+import ee.valiitit.backaegkaob.domain.role.Role;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -8,13 +9,15 @@ import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
+/**
+ * DTO for {@link Role}
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ImageInfo implements Serializable {
+public class RoleDto implements Serializable {
+    private Integer id;
     @NotNull
-    @Size(max = 255)
-    private String title;
-    @NotNull
-    private String imageData;
+    @Size(max = 50)
+    private String name;
 }

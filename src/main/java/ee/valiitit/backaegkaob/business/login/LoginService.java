@@ -6,8 +6,10 @@ import ee.valiitit.backaegkaob.domain.user.UserService;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
 
+
 @Service
-public class LoginService {
+
+class LoginService {
     @Resource
     private UserService userService;
 
@@ -17,6 +19,7 @@ public class LoginService {
     public LoginResponseDto login(String email, String password) {
         User user = userService.findActiveUserBy(email, password);
         return userMapper.toLoginResponseDto(user);
-
     }
+
+
 }

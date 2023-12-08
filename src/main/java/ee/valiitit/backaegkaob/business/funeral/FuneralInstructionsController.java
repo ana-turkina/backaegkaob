@@ -11,6 +11,7 @@ public class FuneralInstructionsController {
     @PostMapping("/funeral/instructions")
     public void addFuneralInstructions(@RequestBody FuneralDto funeralDto,  @RequestParam Integer userId) {
         funeralInstructionsService.addFuneralInstructions(funeralDto, userId);
+
     }
 
 }

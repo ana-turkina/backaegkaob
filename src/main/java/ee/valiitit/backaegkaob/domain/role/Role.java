@@ -1,4 +1,4 @@
-package ee.valiitit.backaegkaob.domain;
+package ee.valiitit.backaegkaob.domain.role;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;

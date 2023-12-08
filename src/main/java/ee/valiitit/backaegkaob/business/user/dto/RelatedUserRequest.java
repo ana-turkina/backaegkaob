@@ -1,4 +1,4 @@
-package ee.valiitit.backaegkaob.business.image;
+package ee.valiitit.backaegkaob.business.user.dto;
 
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -8,13 +8,19 @@ import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
+/**
+ * DTO for {@link ee.valiitit.backaegkaob.domain.user.User}
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ImageInfo implements Serializable {
+public class RelatedUserRequest implements Serializable {
+
     @NotNull
     @Size(max = 255)
-    private String title;
+    private String email;
+
     @NotNull
-    private String imageData;
+    @Size(max = 255)
+    private String password;
 }
