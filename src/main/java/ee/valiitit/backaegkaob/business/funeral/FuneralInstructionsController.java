@@ -9,8 +9,9 @@ public class FuneralInstructionsController {
     private FuneralInstructionsService funeralInstructionsService;
 
     @PostMapping("/funeral/instructions")
-    public void handleAddedImage(@RequestBody FuneralDto funeralDto,  @RequestParam Integer userId) {
+    public void addFuneralInstructions(@RequestBody FuneralDto funeralDto,  @RequestParam Integer userId) {
         funeralInstructionsService.addFuneralInstructions(funeralDto, userId);
+
     }
 
 }

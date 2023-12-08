@@ -1,15 +1,15 @@
 package ee.valiitit.backaegkaob.business.funeral;
 
-import ee.valiitit.backaegkaob.domain.funeral.Funeral;
-import jakarta.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Value;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class FuneralDto implements Serializable {
-    Integer id;
     String funeralInstructions;
 }
