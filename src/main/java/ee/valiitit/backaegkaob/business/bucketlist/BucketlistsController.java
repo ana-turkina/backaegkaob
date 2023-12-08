@@ -1,5 +1,6 @@
 package ee.valiitit.backaegkaob.business.bucketlist;
 
+import ee.valiitit.backaegkaob.business.bucketlist.dto.BucketlistItemInfo;
 import io.swagger.v3.oas.annotations.Operation;
 import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.*;
@@ -17,8 +18,10 @@ public class BucketlistsController {
     @Operation(
     summary = "Leiab süsteemist kõik kasutaja soovid.",
     description = "Tagastab soovi koos sisu (text), pealkirja (title) ja slavestusajaga (timestamp)")
-    public List<Bucketlist> getBucketlistItems() {
-        return bucketlistsService.getBucketlistItems();
+    public void getBucketlistItems(@RequestParam Integer userId) {
+        bucketlistsService.getBucketlistItems(userId);
+
+
     }
 
  @PostMapping("/before/bucketlist")
