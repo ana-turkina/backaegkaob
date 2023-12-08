@@ -1,5 +1,6 @@
-package ee.valiitit.backaegkaob.domain;
+package ee.valiitit.backaegkaob.domain.role;
 
+import ee.valiitit.backaegkaob.business.role.RoleDto;
 import org.mapstruct.*;
 
 @Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE, componentModel = MappingConstants.ComponentModel.SPRING)

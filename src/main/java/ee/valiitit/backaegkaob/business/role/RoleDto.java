@@ -1,5 +1,6 @@
-package ee.valiitit.backaegkaob.domain;
+package ee.valiitit.backaegkaob.business.role;
 
+import ee.valiitit.backaegkaob.domain.role.Role;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;

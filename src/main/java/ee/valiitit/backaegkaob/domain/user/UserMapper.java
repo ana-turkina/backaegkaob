@@ -2,6 +2,7 @@ package ee.valiitit.backaegkaob.domain.user;
 
 
 import ee.valiitit.backaegkaob.business.login.LoginResponseDto;
+import ee.valiitit.backaegkaob.business.user.dto.UserRequest;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingConstants;
