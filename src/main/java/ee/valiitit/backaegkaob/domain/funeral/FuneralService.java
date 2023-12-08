@@ -13,6 +13,7 @@ public class FuneralService {
 
 
     public void saveFuneral(Funeral funeral) {
+
         funeralRepository.save(funeral);
     }
 }

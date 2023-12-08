@@ -18,7 +18,17 @@ public interface ImageMapper {
     @Named("stringToByteArray")
     static byte[] convertImageDataToByteArray(String imageData) {
         return ImageConverter.stringToByteArray(imageData);
+    };
+
+
+    @Mapping(source = "title", target = "title")
+    @Mapping(source = "file", target = "imageData", qualifiedByName = "byteArrayToString")
+    ImageInfo toImageInfo(Image image);
+
+    @Named("byteArrayToString")
+    static String ByteArrayToString(byte[] bytes) {
+        return ImageConverter.byteArrayToString(bytes);
     }
 
-
+    ;
 }

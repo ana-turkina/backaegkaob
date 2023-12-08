@@ -6,7 +6,6 @@ import ee.valiitit.backaegkaob.domain.image.ImageMapper;
 import ee.valiitit.backaegkaob.domain.image.ImageService;
 import ee.valiitit.backaegkaob.domain.user.User;
 import ee.valiitit.backaegkaob.domain.user.UserRepository;
-import ee.valiitit.backaegkaob.util.ImageConverter;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
 
@@ -28,5 +27,10 @@ public class GalleryService {
         Image image = imageMapper.toImage(imageInfo);
         image.setUser(user);
         imageService.saveImage(image);
+    }
+
+    public void getImagesBy(Integer userId) {
+
+
     }
 }
