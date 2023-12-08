@@ -1,7 +1,7 @@
 package ee.valiitit.backaegkaob.business.funeral;
 
 import ee.valiitit.backaegkaob.domain.funeral.Funeral;
-import ee.valiitit.backaegkaob.domain.funeral.FuneralInstructionService;
+import ee.valiitit.backaegkaob.domain.funeral.FuneralService;
 import ee.valiitit.backaegkaob.domain.funeral.FuneralMapper;
 import ee.valiitit.backaegkaob.domain.user.User;
 import ee.valiitit.backaegkaob.domain.user.UserService;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class FuneralInstructionsService {
     @Resource
-    private FuneralInstructionService funeralInstructionService;
+    private FuneralService funeralService;
     @Resource
     private UserService userService;
     @Resource
@@ -19,7 +19,7 @@ public class FuneralInstructionsService {
 
     public void addFuneralInstructions(FuneralDto funeralDto, Integer userId) {
         Funeral funeral = createFuneral(funeralDto, userId);
-        funeralInstructionService.saveFuneralInstructions(funeral);
+        funeralService.saveFuneral(funeral);
     }
 
     private Funeral createFuneral(FuneralDto funeralDto, Integer userId) {

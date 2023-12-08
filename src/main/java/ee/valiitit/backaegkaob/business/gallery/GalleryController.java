@@ -1,5 +1,6 @@
-package ee.valiitit.backaegkaob.business.image;
+package ee.valiitit.backaegkaob.business.gallery;
 
+import ee.valiitit.backaegkaob.business.image.ImageInfo;
 import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -12,7 +13,7 @@ public class GalleryController {
     private GalleryService galleryService;
 
     @PostMapping("/gallery")
-    public void addImageToDataBase(@RequestBody ImageInfo imageInfo, @RequestParam Integer userId) {
-        galleryService.handleAddedImage(imageInfo, userId);
+    public void addImage(@RequestParam Integer userId, @RequestBody ImageInfo imageInfo) {
+        galleryService.addImage(userId, imageInfo);
     }
 }
