@@ -4,6 +4,8 @@ import ee.valiitit.backaegkaob.business.image.ImageInfo;
 import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 public class GalleryController {
     @Resource
@@ -15,7 +17,12 @@ public class GalleryController {
     }
 
     @GetMapping("/gallery")
-    public void getImages(@RequestParam Integer userId) {
-        galleryService.getImagesBy(userId);
+    public List<ImageInfo> getImages(@RequestParam Integer userId) {
+        return galleryService.getImagesBy(userId);
     }
+    @DeleteMapping("/gallery")
+    public  void deleteImage(@RequestParam Integer userId, @RequestParam String title) {
+        galleryService.deleteImageBy(userId, title);
+    }
+
 }

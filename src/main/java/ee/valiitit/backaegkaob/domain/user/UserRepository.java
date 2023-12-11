@@ -7,7 +7,7 @@ import java.util.Optional;
 
 public interface UserRepository extends JpaRepository<User, Integer> {
     @Query("select u from User u where u.email = ?1 and u.password = ?2 and u.status = ?3")
-    User findUserBy(String email, String password, String status);
+    Optional<User> findUserBy(String email, String password, String status);
 
     @Query("select u from User u where u.id = ?1")
     User findUserBy(Integer userId);
