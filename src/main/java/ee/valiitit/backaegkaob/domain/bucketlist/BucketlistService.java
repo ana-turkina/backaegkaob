@@ -13,4 +13,9 @@ public class BucketlistService {
         List<Bucketlist> bucketlists = bucketlistRepository.findBuckelistsBy(userId);
         return bucketlists;
     }
+
+    public void saveBucketlistItem() {
+        bucketlistRepository.save();
+    }
 }
+

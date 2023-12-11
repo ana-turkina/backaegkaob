@@ -2,6 +2,10 @@ package ee.valiitit.backaegkaob.business.bucketlist;
 
 import ee.valiitit.backaegkaob.business.bucketlist.dto.BucketlistItemInfo;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.*;
 
@@ -30,4 +34,11 @@ public class BucketlistsController {
  }
 }
 
-
+//    @PostMapping("/location")
+//    @Operation(summary = "Lisab uue pangaautomaadi asukoha andmed.", description = "Kui imageData on tühi string, siis pilti ei lisata.")
+//    @ApiResponses(value = {
+//            @ApiResponse(responseCode = "200", description = "OK"),
+//            @ApiResponse(responseCode = "403", description = "Sellise nimega pangaautomaadi asukoht on juba olemas.", content = @Content(schema = @Schema(implementation = ApiError.class)))})
+//    public void addAtmLocation(@RequestBody LocationInfo locationInfo) {
+//        locationsService.addAtmLocation(locationInfo);
+//    }

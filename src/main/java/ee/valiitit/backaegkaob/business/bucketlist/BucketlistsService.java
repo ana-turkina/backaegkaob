@@ -42,9 +42,10 @@ public class BucketlistsService {
 
     }
 
+    public void addBucketlistItem(BucketlistDto bucketlistDto) {
+        bucketlistService.saveBucketlistItem();
+    }
 
-//    public void addBucketlistItem(BucketlistDto bucketlistDto) {
-//        bucketlistService.saveBucketlistItem();
     }
 
 
