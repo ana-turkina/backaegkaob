@@ -37,4 +37,8 @@ public class Image {
     @Column(name = "\"timestamp\"", nullable = false)
     private Instant timestamp;
 
+    @NotNull
+    @Column(name= "status", nullable = false)
+    private String status;
+
 }

@@ -17,4 +17,8 @@ public class ImageInfo implements Serializable {
     private String title;
     @NotNull
     private String imageData;
+    @NotNull
+    private String status;
+
+
 }
