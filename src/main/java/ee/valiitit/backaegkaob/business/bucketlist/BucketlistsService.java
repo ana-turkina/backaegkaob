@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -29,29 +30,22 @@ public class BucketlistsService {
     public void getBucketlistItems(Integer userId) {
         List<Bucketlist> bucketlists = bucketlistService.findAllBucketlistItemsBy(userId);
 
-        List<>
 
 
-
+        List<BucketlistDto> bucketlistDtoList = new ArrayList<>();
         for (Bucketlist bucketlist : bucketlists) {
-            mapper.toBucketlistItemInfo(Bucketlist);
+            BucketlistDto bucketlistsDto = bucketlistMapper.toBucketlistsDto(bucketlist);
+            bucketlistDtoList.add(bucketlistsDto);
 
         }
 
+
     }
 
-    public void addBucketlistItem(BucketlistDto bucketlistDto) {
-        bucketlistService.saveBucketlistItem();
+
+//    public void addBucketlistItem(BucketlistDto bucketlistDto) {
+//        bucketlistService.saveBucketlistItem();
     }
-}
 
-//    public List<CityInfo> getCities() {
-//        List<City> cities = cityService.findAllCities();
-//        return cityMapper.toCityInfos(cities);
-//    }
-
-
-//    public List<TransactionTypeInfo> getAllTransactionTypes() {
-//        return transactionTypesService.getAllTransactionTypes();
 
 
