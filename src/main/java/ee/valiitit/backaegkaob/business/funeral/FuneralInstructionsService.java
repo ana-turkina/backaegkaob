@@ -8,6 +8,8 @@ import ee.valiitit.backaegkaob.domain.user.UserService;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class FuneralInstructionsService {
     @Resource
@@ -31,4 +33,8 @@ public class FuneralInstructionsService {
     }
 
 
+    public FuneralDto findFuneralInstructions(Integer userId) {
+       Funeral funeral = funeralService.findBy(userId);
+        return funeralMapper.toFuneralDto(funeral);
+    }
 }

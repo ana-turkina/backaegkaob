@@ -25,4 +25,24 @@ public class Funeral {
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
+    @NotNull
+    @Column(name = "testament", nullable = false, length = Integer.MAX_VALUE)
+    private String testament;
+
+    @NotNull
+    @Column(name = "\"menüü\"", nullable = false, length = Integer.MAX_VALUE)
+    private String menüü;
+
+    @NotNull
+    @Column(name = "hauaplats", nullable = false, length = Integer.MAX_VALUE)
+    private String hauaplats;
+
+    @NotNull
+    @Column(name = "\"matusetüüp\"", nullable = false, length = Integer.MAX_VALUE)
+    private String matusetüüp;
+
+    @NotNull
+    @Column(name = "skulptuur", nullable = false, length = Integer.MAX_VALUE)
+    private String skulptuur;
+
 }

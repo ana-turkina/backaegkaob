@@ -40,6 +40,17 @@ CREATE TABLE funeral
     funeral_instructions text   NOT NULL,
     user_id              int    NOT NULL,
     CONSTRAINT funeral_pk PRIMARY KEY (id)
+CREATE TABLE funeral
+(
+    id                   serial NOT NULL,
+    funeral_instructions text   NOT NULL,
+    testament            text   NOT NULL,
+    menüü                text   NOT NULL,
+    hauaplats            text   NOT NULL,
+    matusetüüp           text   NOT NULL,
+    skulptuur            text   NOT NULL,
+    user_id              int    NOT NULL,
+    CONSTRAINT funeral_pk PRIMARY KEY (id)
 );
 
 -- Table: image

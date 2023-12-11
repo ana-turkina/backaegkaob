@@ -13,5 +13,9 @@ public class FuneralInstructionsController {
         funeralInstructionsService.addFuneralInstructions(funeralDto, userId);
 
     }
+    @GetMapping("funeral/instructions")
+    public FuneralDto findFuneralInstructions(@RequestParam Integer userId) {
+        return funeralInstructionsService.findFuneralInstructions(userId);
+    }
 
 }

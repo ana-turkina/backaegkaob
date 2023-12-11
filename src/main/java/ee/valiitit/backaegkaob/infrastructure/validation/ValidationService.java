@@ -1,5 +1,6 @@
 package ee.valiitit.backaegkaob.infrastructure.validation;
 
+import ee.valiitit.backaegkaob.domain.funeral.Funeral;
 import ee.valiitit.backaegkaob.domain.user.User;
 import ee.valiitit.backaegkaob.infrastructure.exception.BusinessException;
 
@@ -16,4 +17,10 @@ public class ValidationService {
         }
         return optionalUser.get();
     }
+public static Funeral getExistingFuneralInstructions(Optional<Funeral> optionalFuneral) {
+        if (optionalFuneral.isEmpty()) {
+            throw new BusinessException(FUNERAL_INSTRUCTIONS_DOES_NOT_EXIST.getMessage(), FUNERAL_INSTRUCTIONS_DOES_NOT_EXIST.getErrorCode());
+        }
+        return optionalFuneral.get();
+}
 }
