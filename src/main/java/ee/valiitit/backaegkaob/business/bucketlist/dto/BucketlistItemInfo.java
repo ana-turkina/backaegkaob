@@ -5,8 +5,10 @@ import lombok.Data;
 @Data
 public class BucketlistItemInfo {
     //siia tuleb lisada väljad infost, mida soovid kasutada FE-s
-    private Integer bucketlistId;
-    private String title;
-    private String text;
-    private String dateAdded;
+    private String bucketlistItemTitle;
+    private String bucketlistItemText;
+    private String bucketlistItemTimestamp;
 }
+
+
+

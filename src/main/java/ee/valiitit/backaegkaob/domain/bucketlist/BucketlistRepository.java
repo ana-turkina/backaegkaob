@@ -7,8 +7,6 @@ import java.util.List;
 
 public interface BucketlistRepository extends JpaRepository<Bucketlist, Integer> {
     @Query("select b from Bucketlist b where b.user.id = ?1 order by b.timestamp")
-    List<Bucketlist> findBuckelistsBy(Integer userId);
+    List<Bucketlist> findBucketlistItemsBy(Integer userId);
 
-
-    void save();
 }

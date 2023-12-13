@@ -7,9 +7,9 @@ import java.time.LocalDateTime;
 
 @Data
 public class BucketlistDto {
-    Integer id;
-    Integer user_id;
-    String title;
-    String text;
-    LocalDateTime timestamp;
+    private Integer id;
+    private Integer user_id;
+    private String title;
+    private String text;
+    private LocalDateTime timestamp;
 }
