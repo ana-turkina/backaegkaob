@@ -26,7 +26,7 @@ public class MemoriesController {
         return memoriesService.getUserMemories(userId);
     }
 
-    @PostMapping("/new-memory")
+    @PostMapping("/memory")
     @Operation(summary = "Uue mälestuse lisamine.")
     public void addNewMemory(@RequestParam Integer userId, @RequestBody MemoryRequest memoryRequest) {
         memoriesService.addNewMemory(userId, memoryRequest);
