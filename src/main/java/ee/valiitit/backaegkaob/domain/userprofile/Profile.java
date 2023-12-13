@@ -1,4 +1,4 @@
-package ee.valiitit.backaegkaob.domain.image;
+package ee.valiitit.backaegkaob.domain.userprofile;
 
 import ee.valiitit.backaegkaob.domain.user.User;
 import jakarta.persistence.*;
@@ -7,13 +7,11 @@ import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.time.Instant;
-
 @Getter
 @Setter
 @Entity
-@Table(name = "image", schema = "kaob")
-public class Image {
+@Table(name = "profile", schema = "kaob")
+public class Profile {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
@@ -26,19 +24,11 @@ public class Image {
 
     @Size(max = 255)
     @NotNull
-    @Column(name = "title", nullable = false)
-    private String title;
+    @Column(name = "email", nullable = false)
+    private String email;
 
     @NotNull
-    @Column(name = "file", nullable = false)
-    private byte[] file;
-
-    @NotNull
-    @Column(name = "\"timestamp\"", nullable = false)
-    private Instant timestamp;
-
-    @NotNull
-    @Column(name= "status", nullable = false)
-    private String status;
+    @Column(name = "avatar", nullable = false)
+    private byte[] avatar;
 
 }

@@ -1,4 +1,4 @@
-package ee.valiitit.backaegkaob.domain.image;
+package ee.valiitit.backaegkaob.domain.memory;
 
 import ee.valiitit.backaegkaob.domain.user.User;
 import jakarta.persistence.*;
@@ -12,8 +12,8 @@ import java.time.Instant;
 @Getter
 @Setter
 @Entity
-@Table(name = "image", schema = "kaob")
-public class Image {
+@Table(name = "memory", schema = "kaob")
+public class Memory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
@@ -30,15 +30,12 @@ public class Image {
     private String title;
 
     @NotNull
-    @Column(name = "file", nullable = false)
-    private byte[] file;
+    @Column(name = "text", nullable = false)
+    private byte[] text;
 
     @NotNull
     @Column(name = "\"timestamp\"", nullable = false)
     private Instant timestamp;
 
-    @NotNull
-    @Column(name= "status", nullable = false)
-    private String status;
 
 }

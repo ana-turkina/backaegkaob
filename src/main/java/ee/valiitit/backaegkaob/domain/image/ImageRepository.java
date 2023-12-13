@@ -6,7 +6,11 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface ImageRepository extends JpaRepository<Image, Integer> {
-    @Query("select i from Image i where i.user.id = ?1 order by i.timestamp")
-    List<Image> findImagesBy(Integer id);
+    @Query("select i from Image i where i.user.id = ?1 and i.status = ?2")
+    List<Image> findImagesBy(Integer id, String status);
+
+
+    @Query("select i from Image i where i.user.id = ?1 and i.title = ?2")
+    Image getImageBy(Integer id, String title);
 
 }

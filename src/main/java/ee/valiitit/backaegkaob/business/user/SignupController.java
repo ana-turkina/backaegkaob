@@ -20,6 +20,7 @@ public class SignupController {
 
     @Resource
     private SignupService signupService;
+
     @PostMapping("/user")
     @Operation(summary = "Uue kasutaja lisamine.")
     @ApiResponses(value = {
@@ -27,11 +28,11 @@ public class SignupController {
             @ApiResponse(responseCode = "403", description = "Sellise emailiga kasutaja on juba süsteemis olemas",
                     content = @Content(schema = @Schema(implementation = ApiError.class)))})
     public void addNewUser(@RequestBody @Valid UserRequest request) {
-
         signupService.addNewUser(request);
     }
+
     @PostMapping("/user/related")
-    @Operation(summary = "Uue related kasutaja lisamine.")
+    @Operation(summary = "Uue 'friend' kasutaja lisamine.")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "OK"),
             @ApiResponse(responseCode = "403", description = "Sellise emailiga kasutaja on juba süsteemis olemas",

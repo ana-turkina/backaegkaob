@@ -10,6 +10,7 @@ public class LoginController {
     @Resource
     private LoginService loginService;
 
+    //TODO kontrolli, et väljad oleks täidetud ja username ja password klapiks
     @GetMapping("/login")
     public LoginResponseDto login(@RequestParam String email, @RequestParam String password) {
         return loginService.login(email, password);
