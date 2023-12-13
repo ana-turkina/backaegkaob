@@ -11,6 +11,12 @@ public interface BucketlistMapper {
     @Mapping(source = "timestamp", target = "timestamp")
     BucketlistDto toBucketlistsDto(Bucketlist bucketlist);
 
+//    @Mapping(source = "title", target = "title")
+//    @Mapping(source = "text", target = "text")
+//    @Mapping(source = "timestamp", target = "timestamp");
+    //Bucketlists toBucketlistDto();
+
+
 }
 
 

@@ -44,6 +44,7 @@ public class BucketlistsService {
 
     public void addBucketlistItem(BucketlistDto bucketlistDto) {
         bucketlistService.saveBucketlistItem();
+        //dto entityks
     }
 
     }

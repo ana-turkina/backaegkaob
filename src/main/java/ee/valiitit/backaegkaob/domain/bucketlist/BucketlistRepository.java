@@ -10,4 +10,5 @@ public interface BucketlistRepository extends JpaRepository<Bucketlist, Integer>
     List<Bucketlist> findBuckelistsBy(Integer userId);
 
 
+    void save();
 }
