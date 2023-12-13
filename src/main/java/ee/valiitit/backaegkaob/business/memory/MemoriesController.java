@@ -1,12 +1,11 @@
 package ee.valiitit.backaegkaob.business.memory;
 
 import ee.valiitit.backaegkaob.business.memory.dto.MemoryInfo;
+import ee.valiitit.backaegkaob.business.memory.dto.MemoryRequest;
 import ee.valiitit.backaegkaob.business.memory.dto.MemoryShortInfo;
 import io.swagger.v3.oas.annotations.Operation;
 import jakarta.annotation.Resource;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,5 +24,11 @@ public class MemoriesController {
     @Operation(summary = "Tagastab mälestused, selle pealkirja ja timestamp.")
     public List<MemoryShortInfo> getUserMemories(@RequestParam Integer userId) {
         return memoriesService.getUserMemories(userId);
+    }
+
+    @PostMapping("/new-memory")
+    @Operation(summary = "Uue mälestuse lisamine.")
+    public void addNewMemory(@RequestParam Integer userId, @RequestBody MemoryRequest memoryRequest) {
+        memoriesService.addNewMemory(userId, memoryRequest);
     }
 }

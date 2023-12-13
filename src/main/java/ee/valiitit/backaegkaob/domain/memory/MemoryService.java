@@ -17,4 +17,8 @@ public class MemoryService {
     public List<Memory> getMemoriesBy(Integer userId) {
         return memoryRepository.findMemoriesBy(userId);
     }
+
+    public void saveMemory(Memory memory) {
+        memoryRepository.save(memory);
+    }
 }

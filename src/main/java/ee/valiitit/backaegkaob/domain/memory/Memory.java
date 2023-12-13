@@ -21,8 +21,8 @@ public class Memory {
 
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "users_id", nullable = false)
-    private User users;
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
 
     @Size(max = 255)
     @NotNull
@@ -36,5 +36,6 @@ public class Memory {
     @NotNull
     @Column(name = "\"timestamp\"", nullable = false)
     private Instant timestamp;
+
 
 }
