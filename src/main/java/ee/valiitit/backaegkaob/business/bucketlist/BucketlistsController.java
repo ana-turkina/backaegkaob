@@ -1,16 +1,11 @@
 package ee.valiitit.backaegkaob.business.bucketlist;
 
-import ee.valiitit.backaegkaob.business.bucketlist.dto.BucketlistItemInfo;
+import ee.valiitit.backaegkaob.business.bucketlist.dto.BucketlistItemsInfo;
 import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.media.Content;
-import io.swagger.v3.oas.annotations.media.Schema;
-import io.swagger.v3.oas.annotations.responses.ApiResponse;
-import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 
 @RestController
@@ -22,11 +17,15 @@ public class BucketlistsController {
     @Operation(
     summary = "Leiab süsteemist kõik kasutaja soovid.",
     description = "Tagastab soovi koos sisu (text), pealkirja (title) ja slavestusajaga (timestamp)")
-    public void getBucketlistItems(@RequestParam Integer userId) {
-        bucketlistsService.getBucketlistItems(userId);
+    public List<BucketlistItemsInfo> getBucketlistItems(@RequestParam Integer userId) {
+        return bucketlistsService.getBucketlistItems(userId);
 
 
     }
+
+
+
+
 
  @PostMapping("/before/bucketlist")
  public void addBucketlistItem (@RequestBody BucketlistDto bucketlistDto, @RequestParam Integer id,  Integer user_id, String title, String text, LocalDateTime timestamp) {

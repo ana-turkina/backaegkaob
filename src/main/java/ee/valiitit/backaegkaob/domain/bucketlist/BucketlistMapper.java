@@ -6,6 +6,13 @@ import org.mapstruct.Mapping;
 public interface BucketlistMapper {
 
 
+    @Mapping(source = "id", target = "bucketlistItemId")
+    @Mapping(source = "title", target = "bucketlistItemTitle")
+    @Mapping(source = "text", target = "bucketlistItemText")
+    @Mapping(source = "timestamp", target = "bucketlistItemTimestamp")
+
+
+
     @Mapping(source = "title", target = "title")
     @Mapping(source = "text", target = "text")
     @Mapping(source = "timestamp", target = "timestamp")
