@@ -3,8 +3,6 @@ package ee.valiitit.backaegkaob.domain.bucketlist;
 import ee.valiitit.backaegkaob.business.bucketlist.BucketlistDto;
 import ee.valiitit.backaegkaob.business.bucketlist.dto.BucketlistItemInfo;
 import ee.valiitit.backaegkaob.business.bucketlist.dto.BucketlistItemsInfo;
-import ee.valiitit.backaegkaob.business.memory.dto.MemoryRequest;
-import ee.valiitit.backaegkaob.domain.memory.Memory;
 import ee.valiitit.backaegkaob.util.ByteConverter;
 import ee.valiitit.backaegkaob.util.InstantConverter;
 import org.mapstruct.*;
@@ -12,7 +10,8 @@ import org.mapstruct.*;
 import java.time.Instant;
 import java.util.List;
 
-@Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE, componentModel = MappingConstants.ComponentModel.SPRING)
+@Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE, componentModel = MappingConstants.ComponentModel.SPRING,
+        imports = {Instant.class})
 public interface BucketlistMapper {
 
 
