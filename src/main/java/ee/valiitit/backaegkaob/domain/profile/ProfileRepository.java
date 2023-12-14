@@ -1,4 +1,4 @@
-package ee.valiitit.backaegkaob.domain.userprofile;
+package ee.valiitit.backaegkaob.domain.profile;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

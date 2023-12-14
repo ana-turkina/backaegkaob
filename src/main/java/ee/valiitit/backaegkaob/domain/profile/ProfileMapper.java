@@ -1,4 +1,4 @@
-package ee.valiitit.backaegkaob.domain.userprofile;
+package ee.valiitit.backaegkaob.domain.profile;
 
 import ee.valiitit.backaegkaob.business.userprofile.ProfileInfo;
 import ee.valiitit.backaegkaob.util.ImageConverter;
