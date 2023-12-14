@@ -20,7 +20,7 @@ public class SignupController {
     private SignupService signupService;
 
     @PostMapping("/user")
-    @Operation(summary = "Uue kasutaja lisamine.")
+    @Operation(summary = "Lisab uue kasutaja.")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "OK"),
             @ApiResponse(responseCode = "403", description = "Sellise emailiga kasutaja on juba süsteemis olemas",
@@ -30,7 +30,7 @@ public class SignupController {
     }
 
     @PostMapping("/user/related")
-    @Operation(summary = "Uue 'friend' kasutaja lisamine.")
+    @Operation(summary = "Lisab uue 'friend' kasutaja.")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "OK"),
             @ApiResponse(responseCode = "403", description = "Sellise emailiga kasutaja on juba süsteemis olemas",
@@ -40,7 +40,7 @@ public class SignupController {
     }
 
     @DeleteMapping("/user")
-    @Operation(summary = "Kasutaja konto deaktiveerimine.")
+    @Operation(summary = "Deaktiveerib kasutaja konto.")
     public void deleteUser(@RequestParam Integer userId) {
         signupService.deleteUser(userId);
     }

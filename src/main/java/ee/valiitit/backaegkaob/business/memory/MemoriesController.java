@@ -15,19 +15,19 @@ public class MemoriesController {
     private MemoriesService memoriesService;
 
     @GetMapping("/memory")
-    @Operation(summary = "Tagastab mälestuse, selle pealkirja, sisu ja timestamp.")
+    @Operation(summary = "Tagastab mälestuse täismahus: selle pealkirja, sisu ja timestamp.")
     public MemoryInfo getMemory(@RequestParam Integer memoryId) {
         return memoriesService.getMemory(memoryId);
     }
 
     @GetMapping("/memories")
-    @Operation(summary = "Tagastab mälestused, selle pealkirja ja timestamp.")
+    @Operation(summary = "Tagastab mälestusi lühinenud kujul: pealkiri ja timestamp.")
     public List<MemoryShortInfo> getUserMemories(@RequestParam Integer userId) {
         return memoriesService.getUserMemories(userId);
     }
 
     @PostMapping("/memory")
-    @Operation(summary = "Uue mälestuse lisamine.")
+    @Operation(summary = "Lisab uue mälestuse.")
     public void addNewMemory(@RequestParam Integer userId, @RequestBody MemoryRequest memoryRequest) {
         memoriesService.addNewMemory(userId, memoryRequest);
     }

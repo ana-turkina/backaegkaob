@@ -2,12 +2,10 @@ package ee.valiitit.backaegkaob.business.bucketlist;
 
 import ee.valiitit.backaegkaob.business.bucketlist.dto.BucketlistItemInfo;
 import ee.valiitit.backaegkaob.business.bucketlist.dto.BucketlistItemsInfo;
-import ee.valiitit.backaegkaob.business.memory.dto.MemoryRequest;
 import io.swagger.v3.oas.annotations.Operation;
 import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 
@@ -26,7 +24,7 @@ public class BucketlistsController {
 
 
     @PostMapping("/before/bucketlist/items")
-    @Operation(summary = "Lisab uue soovi nimekirja")
+    @Operation(summary = "Lisab uue kasutaja soovi.")
     public void addBucketlistItem(@RequestBody BucketlistItemInfo bucketlistItemInfo, @RequestParam Integer userId) {
         bucketlistsService.addBucketlistItem(userId, bucketlistItemInfo);
     }
