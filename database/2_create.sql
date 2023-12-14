@@ -6,7 +6,7 @@
 CREATE TABLE audio
 (
     id        serial       NOT NULL,
-    users_id  int          NOT NULL,
+    user_id  int          NOT NULL,
     title     varchar(255) NOT NULL,
     audio     bytea        NOT NULL,
     timestamp timestamp    NOT NULL,
@@ -77,7 +77,7 @@ CREATE TABLE location
 CREATE TABLE memory
 (
     id        serial       NOT NULL,
-    users_id  int          NOT NULL,
+    user_id  int          NOT NULL,
     title     varchar(255) NOT NULL,
     text      bytea        NOT NULL,
     timestamp timestamp    NOT NULL,
@@ -126,7 +126,7 @@ CREATE TABLE "user"
 CREATE TABLE video
 (
     id        serial       NOT NULL,
-    users_id  int          NOT NULL,
+    user_id  int          NOT NULL,
     title     varchar(255) NOT NULL,
     file      bytea        NOT NULL,
     timestamp timestamp    NOT NULL,
@@ -142,10 +142,10 @@ CREATE TABLE wish
 );
 
 -- foreign keys
--- Reference: audio_users (table: audio)
+-- Reference: audio_user (table: audio)
 ALTER TABLE audio
-    ADD CONSTRAINT audio_users
-        FOREIGN KEY (users_id)
+    ADD CONSTRAINT audio_user
+        FOREIGN KEY (user_id)
             REFERENCES "user" (id)
             NOT DEFERRABLE
                 INITIALLY IMMEDIATE
@@ -232,28 +232,28 @@ ALTER TABLE relationship
                 INITIALLY IMMEDIATE
 ;
 
--- Reference: text_users (table: memory)
+-- Reference: text_user (table: memory)
 ALTER TABLE memory
-    ADD CONSTRAINT text_users
-        FOREIGN KEY (users_id)
+    ADD CONSTRAINT text_user
+        FOREIGN KEY (user_id)
             REFERENCES "user" (id)
             NOT DEFERRABLE
                 INITIALLY IMMEDIATE
 ;
 
--- Reference: users_role (table: user)
+-- Reference: user_role (table: user)
 ALTER TABLE "user"
-    ADD CONSTRAINT users_role
+    ADD CONSTRAINT user_role
         FOREIGN KEY (role_id)
             REFERENCES role (id)
             NOT DEFERRABLE
                 INITIALLY IMMEDIATE
 ;
 
--- Reference: video_users (table: video)
+-- Reference: video_user (table: video)
 ALTER TABLE video
-    ADD CONSTRAINT video_users
-        FOREIGN KEY (users_id)
+    ADD CONSTRAINT video_user
+        FOREIGN KEY (user_id)
             REFERENCES "user" (id)
             NOT DEFERRABLE
                 INITIALLY IMMEDIATE

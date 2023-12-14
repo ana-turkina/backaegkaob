@@ -1,5 +1,6 @@
 package ee.valiitit.backaegkaob.business.user;
 
+import ee.valiitit.backaegkaob.business.Status;
 import ee.valiitit.backaegkaob.business.user.dto.RelatedUserRequest;
 import ee.valiitit.backaegkaob.business.user.dto.UserRequest;
 import ee.valiitit.backaegkaob.domain.role.Role;
@@ -36,5 +37,11 @@ public class SignupService {
         user.setRole(role);
         userService.saveUser(user);
 
+    }
+
+    public void deleteUser(Integer userId) {
+        User user = userService.getUserBy(userId);
+        user.setStatus(Status.DELETED);
+        userService.saveUser(user);
     }
 }
