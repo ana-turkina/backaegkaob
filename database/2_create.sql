@@ -34,12 +34,7 @@ CREATE TABLE funeral_wish
 );
 
 -- Table: funeral
-CREATE TABLE funeral
-(
-    id                   serial NOT NULL,
-    funeral_instructions text   NOT NULL,
-    user_id              int    NOT NULL,
-    CONSTRAINT funeral_pk PRIMARY KEY (id)
+
 CREATE TABLE funeral
 (
     id                   serial NOT NULL,

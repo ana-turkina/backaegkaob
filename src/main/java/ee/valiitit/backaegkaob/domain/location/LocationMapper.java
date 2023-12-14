@@ -1,10 +1,13 @@
 package ee.valiitit.backaegkaob.domain.location;
 
 import ee.valiitit.backaegkaob.business.Status;
+import ee.valiitit.backaegkaob.business.image.ImageInfo;
 import ee.valiitit.backaegkaob.business.location.LocationInfo;
+import ee.valiitit.backaegkaob.domain.image.Image;
 import org.mapstruct.*;
 
 import java.time.Instant;
+import java.util.List;
 
 
 @Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE, componentModel = MappingConstants.ComponentModel.SPRING,
@@ -19,8 +22,15 @@ public interface LocationMapper {
     @Mapping(source = "longtitude", target = "longtitude")
     Location toLocation(LocationInfo locationInfo);
 
+
+    @Mapping(source = "title", target = "title")
+    @Mapping(source = "description", target = "description")
+    @Mapping(source = "latitude", target = "latitude")
+    @Mapping(source = "longtitude", target = "longtitude")
+
     LocationInfo toLocationInfo(Location location);
 
-    @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
-    Location partialUpdate(LocationInfo locationInfo, @MappingTarget Location location);
+    List<LocationInfo> toLocationInfos(List<Location> locations);
+
+
 }

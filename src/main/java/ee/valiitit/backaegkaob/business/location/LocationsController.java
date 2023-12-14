@@ -1,10 +1,9 @@
 package ee.valiitit.backaegkaob.business.location;
 
 import jakarta.annotation.Resource;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 public class LocationsController {
@@ -14,8 +13,11 @@ public class LocationsController {
     @PostMapping("/map")
     public void addLocation(@RequestBody LocationInfo locationInfo, @RequestParam Integer userId) {
         locationsService.addLocation(locationInfo, userId);
-
     }
 
-
+    @GetMapping("/map")
+    public List<LocationInfo> findLocations(@RequestParam Integer userId) {
+        List<LocationInfo> locationInfos = locationsService.findLocations(userId);
+        return locationInfos;
+    }
 }

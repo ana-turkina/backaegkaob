@@ -16,12 +16,17 @@ public class FuneralService {
 
 
     public void saveFuneral(Funeral funeral) {
-
         funeralRepository.save(funeral);
     }
 
     public Funeral findBy(Integer userId) {
-       Optional<Funeral> optionalFuneral = funeralRepository.findById(userId);
+        System.out.println("findBy called");
+        Optional<Funeral> optionalFuneral = funeralRepository.findByUserId(userId);
+        System.out.println("optionalFuneral isEmpty = " + optionalFuneral.isEmpty());
         return ValidationService.getExistingFuneralInstructions(optionalFuneral);
+    }
+
+    public void deleteBy(Integer funeralId) {
+        funeralRepository.deleteById(funeralId);
     }
 }

@@ -10,7 +10,7 @@ public interface ImageRepository extends JpaRepository<Image, Integer> {
     List<Image> findImagesBy(Integer id, String status);
 
 
-    @Query("select i from Image i where i.user.id = ?1 and i.title = ?2")
-    Image getImageBy(Integer id, String title);
+    @Query("select i from Image i where i.user.id = ?1 and i.title = ?2 and i.status = ?3")
+    Image getImageBy(Integer id, String title, String status);
 
 }

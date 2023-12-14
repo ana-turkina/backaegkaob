@@ -21,6 +21,7 @@ public class FuneralInstructionsService {
 
     public void addFuneralInstructions(FuneralDto funeralDto, Integer userId) {
         Funeral funeral = createFuneral(funeralDto, userId);
+
         funeralService.saveFuneral(funeral);
     }
 
@@ -34,7 +35,17 @@ public class FuneralInstructionsService {
 
 
     public FuneralDto findFuneralInstructions(Integer userId) {
-       Funeral funeral = funeralService.findBy(userId);
+        System.out.println("findFuneralInstructions with userId: " + userId);
+
+        Funeral funeral = funeralService.findBy(userId);
+        System.out.println("Found funeral with Id: " + funeral.getId());
         return funeralMapper.toFuneralDto(funeral);
     }
+
+    public void deleteFuneralInstructions(Integer userId) {
+        Funeral funeral = funeralService.findBy(userId);
+        Integer funeralId = funeral.getId();
+        funeralService.deleteBy(funeralId);
+    }
 }
+

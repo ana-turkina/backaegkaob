@@ -8,6 +8,8 @@ import ee.valiitit.backaegkaob.domain.user.UserRepository;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class LocationsService {
     @Resource
@@ -22,5 +24,11 @@ public class LocationsService {
         Location location = locationMapper.toLocation(locationInfo);
         location.setUser(user);
         locationService.setLocation(location);
+    }
+
+    public List<LocationInfo> findLocations(Integer userId) {
+        List<Location> locations = locationService.findLocationsBy(userId);
+        List<LocationInfo> locationInfos = locationMapper.toLocationInfos(locations);
+        return locationInfos;
     }
 }

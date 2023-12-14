@@ -15,7 +15,14 @@ public class FuneralInstructionsController {
     }
     @GetMapping("funeral/instructions")
     public FuneralDto findFuneralInstructions(@RequestParam Integer userId) {
+        System.out.println("GET findFuneralInstructions called");
         return funeralInstructionsService.findFuneralInstructions(userId);
+    }
+    @DeleteMapping("/funeral/instructions")
+    public void deleteFuneralInstructions(@RequestParam Integer userId) {
+        System.out.println("DELETE " + userId);
+        funeralInstructionsService.deleteFuneralInstructions(userId);
+
     }
 
 }

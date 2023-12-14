@@ -23,6 +23,6 @@ public class ImageService {
         return imageRepository.getReferenceById(userId);
     }
     public Image getImageBy(Integer userId, String title) {
-      return imageRepository.getImageBy(userId, title);
+      return imageRepository.getImageBy(userId, title, Status.ACTIVE);
     };
 }
